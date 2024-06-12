@@ -6,35 +6,35 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.springweb.Repository.ProductRepository;
-import com.example.springweb.entites.product;
+import com.example.springweb.entites.products;
 
 @RestController
 public class ProductRestController {
 	
 	@Autowired
-	ProductRepository repository;
+	ProductRepository repository	;
 	
 	@GetMapping("/products/")
-	public List<product> getProducts()
+	public List<products> getProducts()
  {
 		return repository.findAll();
 		
 		
  }
 	@GetMapping("/products/{id}")
-	public Optional<product> getProduct(@PathVariable("id") int id)
+	public Optional<products> getProduct(@PathVariable("id") int id)
 	{
 		return repository.findById(id);
 	}
 	
 	@PostMapping("/products/")
-	public product createProduct(product Prod)
+	public products createProduct(products Prod)
 	{
 		return repository.save(Prod);
 	}
 	
 	@PutMapping("/products/")
-	public product updateProduct(product Prod)
+	public products updateProduct(products Prod)
 	{
 		return repository.save(Prod);
 	}
