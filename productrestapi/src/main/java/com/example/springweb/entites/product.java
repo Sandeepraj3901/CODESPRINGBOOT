@@ -1,9 +1,11 @@
 package com.example.springweb.entites;
 
 
-import org.springframework.data.annotation.Id;
-
-import jakarta.persistence.*;
+//import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 
 
@@ -40,7 +42,6 @@ public class product {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
 	
 	
 
