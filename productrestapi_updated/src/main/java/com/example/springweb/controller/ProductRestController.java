@@ -12,7 +12,7 @@ import com.example.springweb.entites.products;
 public class ProductRestController {
 	
 	@Autowired
-	ProductRepository repository	;
+	ProductRepository repository;
 	
 	@GetMapping("/products/")
 	public List<products> getProducts()
@@ -21,6 +21,7 @@ public class ProductRestController {
 		
 		
  }
+
 	@GetMapping("/products/{id}")
 	public Optional<products> getProduct(@PathVariable("id") int id)
 	{
@@ -28,13 +29,13 @@ public class ProductRestController {
 	}
 	
 	@PostMapping("/products/")
-	public products createProduct(products Prod)
+	public products createProduct(@RequestBody products Prod)
 	{
 		return repository.save(Prod);
 	}
 	
 	@PutMapping("/products/")
-	public products updateProduct(products Prod)
+	public products updateProduct(@RequestBody products Prod)
 	{
 		return repository.save(Prod);
 	}
